@@ -1,0 +1,17 @@
+{
+  "name": "junii-astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource/mulish": "^4.5.14",
+    "@fontsource/poppins": "^4.5.10",
+    "astro": "^2.0.18"
+  }
+}

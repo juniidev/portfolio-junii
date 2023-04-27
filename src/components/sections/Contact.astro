@@ -1,0 +1,128 @@
+---
+// Import icons
+import Icon from "../Icon.astro";
+
+// Import fonts
+import "@fontsource/poppins/700.css";
+import "@fontsource/mulish/600.css";
+---
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="contact__content">
+      <div class="contact__title">
+        <p>Contacto</p>
+        <h3>¡No seas tímido! ¡Contáctame! &#128071;</h3>
+      </div>
+      <div class="contact__icons">
+        <div class="contact__icon-box">
+          <span>
+            <Icon icon="map" size={20} />
+          </span>
+          <div class="contact__info">
+            <h3>Locación</h3>
+            <p>Liberia, Costa Rica</p>
+          </div>
+        </div>
+
+        <div class="contact__icon-box">
+          <span>
+            <Icon icon="mail" size={20} />
+          </span>
+          <div class="contact__info">
+            <h3>Correo</h3>
+            <a href="mailto:info.juniidev@gmail.com">
+              info.juniidev@gmail.com</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Styles contact section -->
+<style>
+  .contact {
+    background-color: white;
+    padding: 11rem 0;
+  }
+  @media (max-width: 1020px) {
+    .contact {
+      padding: 8rem 0;
+    }
+  }
+  .contact__content {
+    display: flex;
+    flex-direction: column;
+  }
+  @media (max-width: 750px) {
+    .contact__title {
+      text-align: center;
+    }
+  }
+  .contact__title p {
+    color: var(--header-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: var(--text-size);
+    margin-bottom: 1rem;
+  }
+  .contact__title h3 {
+    color: var(--black-shade);
+    font-size: var(--headings-size);
+  }
+  .contact__icons {
+    display: flex;
+    gap: 8rem;
+    flex-wrap: wrap;
+    margin-top: 6rem;
+  }
+  @media (max-width: 750px) {
+    .contact__icons {
+      flex-direction: column;
+      gap: 5rem;
+      justify-content: center;
+      text-align: center;
+    }
+  }
+  .contact__icon-box {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  @media (max-width: 750px) {
+    .contact__icon-box {
+      flex-direction: column;
+    }
+  }
+  .contact__icon-box span {
+    background-color: white;
+    padding: 1.3rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    margin: 0;
+  }
+
+  .contact__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .contact__info h3 {
+    font-size: var(--text-size);
+    color: var(--black-shade);
+  }
+  .contact__info a,
+  .contact__info p {
+    font-size: var(--text-size);
+    color: var(--text-color);
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .contact__info a:hover,
+  .contact__info p:hover {
+    color: header-color;
+    transition: all 0.3s;
+  }
+</style>

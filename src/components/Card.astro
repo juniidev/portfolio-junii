@@ -1,0 +1,86 @@
+---
+// Import icons
+import Icon from "./Icon.astro";
+
+// Import fonts
+import "@fontsource/poppins/700.css";
+import "@fontsource/mulish/400.css";
+
+const data = [
+  // Car rental
+  {
+    title: "Car Rental 🚗",
+    img: "../images/project_01-min.png",
+    description:
+      "CAR Rental es una plataforma en línea que permite a los usuarios alquilar coches para uso personal o de negocios. El sitio web proporciona una interfaz para buscar, comparar y reservar coches.",
+    techno1: "Astro",
+    techno2: "Tailwind",
+    code: "#",
+    demo: "#",
+  },
+  // Card 2
+  {
+    title: "The Sound 🎧",
+    img: "../images/project_03-min.png",
+    description:
+      "Tienda en línea de auriculares de alta calidad que ofrecen una experiencia de audio excepcional. Podrás encontrar una gran variedad de modelos de auriculares.",
+    techno1: "HTML",
+    techno2: "CSS",
+    techno3: "JS",
+    code: "https://github.com/juniidev/the-sound",
+    demo: "https://juniidev.github.io/the-sound/",
+  },
+  // Card 3
+  {
+    title: "FoodFun 🥗",
+    img: "../images/project_02-min.png",
+    description: "Bienvenidos al mundo de la Comida Sabrosa y Fresca.",
+    techno1: "HTML",
+    techno2: "CSS",
+    techno3: "JS",
+    code: "https://github.com/juniidev/foodfun",
+    demo: "https://juniidev.github.io/foodfun/",
+  },
+  // Card 3
+  {
+    title: "DotDash 🔁",
+    img: "../images/project_04-min.png",
+    description:
+      "Pequeña aplicación web que te permite traducir texto a código Morse y viceversa. Este proyecto es una muestra de cómo usar HTML, CSS y JavaScript para crear una aplicación web interactiva.",
+    techno1: "HTML",
+    techno2: "CSS",
+    techno3: "JS",
+    code: "https://github.com/juniidev/dotdash",
+    demo: "https://dotdash.netlify.app/",
+  },
+];
+---
+
+{
+  data.map((item) => (
+    <div class="pro pro__1">
+      <div class="pro__img">
+        <a target="_blank" href={item.demo} rel="noreferrer">
+          <img src={item.img} alt="website" />
+        </a>
+      </div>
+      <div class="pro__text">
+        <h3>{item.title}</h3>
+        <p>{item.description}</p>
+        <div class="stack">
+          <p>{item.techno1}</p>
+          <p>{item.techno2}</p>
+          <p>{item.techno3}</p>
+        </div>
+        <div class="links">
+          <a target="_blank" href={item.code} rel="noreferrer">
+            Code <Icon icon="github-logo" size="17" />
+          </a>
+          <a target="_blank" href={item.demo} rel="noreferrer">
+            Demo <Icon icon="arrow-square-out" size="17" />
+          </a>
+        </div>
+      </div>
+    </div>
+  ))
+}

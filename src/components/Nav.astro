@@ -1,0 +1,256 @@
+---
+import Icon from "./Icon.astro";
+
+import "@fontsource/poppins/500.css";
+---
+
+<nav class="menu">
+  <h3 class="logo">Junii.dev</h3>
+
+  <ul>
+    <li>
+      <a href="/">Inicio</a>
+    </li>
+
+    <li>
+      <a href="#about">Sobre mí</a>
+    </li>
+
+    <li>
+      <a href="#portfolio">Portafolio</a>
+    </li>
+
+    <li>
+      <a href="#contact">Contacto</a>
+    </li>
+
+    <li class="hamburger-li">
+      <span class="open">
+        <Icon icon="list" size="30px" />
+      </span>
+    </li>
+  </ul>
+</nav>
+
+<div class="mobile-nav">
+  <span class="close">
+    <Icon icon="close" size="30px" />
+  </span>
+
+  <ul>
+    <li class="item">
+      <a href="/">Inicio</a>
+    </li>
+
+    <li class="item">
+      <a href="#about">Sobre mí</a>
+    </li>
+
+    <li class="item">
+      <a href="#portfolio">Portafolio</a>
+    </li>
+
+    <li class="item">
+      <a href="#contact">Contacto</a>
+    </li>
+  </ul>
+
+  <!-- <div class="socials">
+    <div class="icon">
+      <a href="#">
+        <Icon icon="instagram-logo" />
+      </a>
+    </div>
+
+    <div class="icon">
+      <a href="#">
+        <Icon icon="github-logo" />
+      </a>
+    </div>
+
+    <div class="icon">
+      <a href="#">
+        <Icon icon="twitter-logo" />
+      </a>
+    </div>
+  </div> -->
+</div>
+
+<script>
+  // ----
+
+  function pageUp() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  const logo = document.querySelector(".logo");
+
+  logo.addEventListener("click", pageUp);
+
+  // ----
+
+  // ----
+
+  const navBar = () => {
+    const openBtn = document.querySelector(".open");
+    const closeBtn = document.querySelector(".close");
+    const mobileMenu = document.querySelector(".mobile-nav");
+
+    openBtn.addEventListener("click", () => {
+      mobileMenu.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("active");
+    });
+
+    // Hide menu once click any item
+    function hideMenu() {
+      mobileMenu.classList.remove("active");
+    }
+
+    const menuItems = document.querySelectorAll(".item");
+    menuItems.forEach((item) => {
+      item.addEventListener("click", hideMenu);
+    });
+  };
+
+  navBar();
+
+  // ----
+</script>
+
+<style>
+  .mobile-menu {
+    font-size: 2.3rem;
+    cursor: pointer;
+    display: none;
+  }
+  .mobile-menu:hover {
+    color: var(--header-color);
+    transition: all 0.3s;
+  }
+  @media (max-width: 900px) {
+    .mobile-menu {
+      display: flex;
+    }
+  }
+
+  /* .closed-menu {
+    left: -100% !important;
+  }
+
+  .open-menu {
+    left: 0 !important;
+  } */
+
+  .mobile-nav {
+    left: -100% !important;
+  }
+
+  .mobile-nav.active {
+    left: 0 !important;
+  }
+
+  .mobile-nav {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    z-index: 300;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .mobile-nav span {
+    font-size: 3.3rem;
+    position: absolute;
+    top: 2rem;
+    right: 4rem;
+    cursor: pointer;
+  }
+  .mobile-nav span:hover {
+    color: var(--header-color);
+    transition: all 0.3s;
+  }
+  .mobile-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    font-size: 2.3rem;
+    list-style: none;
+  }
+  .mobile-nav ul a {
+    color: var(--title-color);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .mobile-nav ul a:hover {
+    color: var(--header-color);
+    transition: all 0.3s;
+  }
+
+  nav {
+    font-size: var(--text-size);
+    width: 100%;
+    height: auto;
+    padding: 25px 45px 25px 45px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    background-color: var(--background-color);
+    top: 0;
+    left: 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.09);
+    z-index: 200;
+    transition: all 0.3s ease-in-out;
+
+    align-items: center;
+  }
+
+  @media (max-width: 400px) {
+    nav {
+      padding: 25px 30px 25px 30px;
+    }
+  }
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+  nav ul a {
+    color: var(--black-shade);
+    text-decoration: none;
+    transition: all 0.23s;
+    font-weight: 500;
+  }
+  @media (max-width: 900px) {
+    nav ul a {
+      display: none;
+    }
+  }
+  nav ul a:hover {
+    color: var(--header-color);
+  }
+
+  .logo {
+    cursor: pointer;
+    color: var(--black-shade);
+  }
+
+  @media (min-width: 768px) {
+    .hamburger-li {
+      display: none;
+    }
+  }
+
+  .close,
+  .open {
+    cursor: pointer;
+  }
+</style>
